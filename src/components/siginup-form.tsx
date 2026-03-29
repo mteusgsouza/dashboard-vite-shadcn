@@ -17,19 +17,20 @@ import {
 import { Input } from "@/components/ui/input"
 import { useTitle } from "@/hooks/use-title"
 
-export function LoginForm({
+export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  useTitle("Sign In | Vite Dashboard")
+  useTitle("Sign Up | Vite Dashboard")
   
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome back</CardTitle>
+          <CardTitle className="text-xl">Welcome to Vite Dashboard</CardTitle>
           <CardDescription>
-            Login with your Apple or Google account
+            Register with your Apple or Google account, or continue with your
+            email
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -74,12 +75,12 @@ export function LoginForm({
               <Field>
                 <Button type="submit">Login</Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account?{" "}
+                  Have an account?{" "}
                   <a
-                    href="/auth/signup"
+                    href="/auth/signin"
                     className="hover:underline hover:underline-offset-4"
                   >
-                    Sign up
+                    Sign in
                   </a>
                   <a
                     href="/auth/forget-password"
@@ -94,8 +95,9 @@ export function LoginForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center">
-        By clicking continue, you agree to our <a href="/terms">Terms of Service</a>{" "}
-        and <a href="/privacy">Privacy Policy</a>.
+        By clicking continue, you agree to our{" "}
+        <a href="/terms">Terms of Service</a> and{" "}
+        <a href="/privacy">Privacy Policy</a>.
       </FieldDescription>
     </div>
   )
